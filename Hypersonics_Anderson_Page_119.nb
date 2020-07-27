@@ -1,0 +1,398 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15323,        390]
+NotebookOptionsPosition[     13786,        355]
+NotebookOutlinePosition[     14251,        372]
+CellTagsIndexPosition[     14208,        369]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "Utilities`CleanSlate`"}], "\[IndentingNewLine]", 
+ RowBox[{"CleanSlate", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ClearInOut", "[", "]"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"pdConv", "[", "f_", "]"}], ":=", 
+   RowBox[{"TraditionalForm", "[", 
+    RowBox[{"f", "/.", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"Derivative", "[", "inds__", "]"}], "[", "g_", "]"}], "[", 
+       "vars__", "]"}], "\[RuleDelayed]", 
+      RowBox[{"Apply", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Defer", "[", 
+          RowBox[{"D", "[", 
+           RowBox[{
+            RowBox[{"g", "[", "vars", "]"}], ",", "##"}], "]"}], "]"}], "&"}],
+         ",", 
+        RowBox[{
+         RowBox[{"Transpose", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", "vars", "}"}], ",", 
+            RowBox[{"{", "inds", "}"}]}], "}"}], "]"}], "/.", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"var_", ",", "0"}], "}"}], "\[RuleDelayed]", 
+            RowBox[{"Sequence", "[", "]"}]}], ",", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"var_", ",", "1"}], "}"}], "\[RuleDelayed]", 
+            RowBox[{"{", "var", "}"}]}]}], "}"}]}]}], "]"}]}]}], "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", " ", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"https", ":"}], "//", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"blog", ".", "wolfram", ".", "com"}], "/", "2011"}], "/", 
+        "12"}], "/", "15"}], "/", "mathematica"}], "-", "qa", "-", "series", 
+     "-", "converting", "-", "to", "-", "conventional", "-", "mathematical", 
+     "-", 
+     RowBox[{"typesetting", "/"}]}]}], "\[IndentingNewLine]", 
+   "*)"}]}]}], "Input",ExpressionUUID->"98802bb9-d8f5-4f0b-a73b-5b66fe91e605"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"  (CleanSlate) Contexts purged: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", "\<\"Global`\"\>", "}"}]}],
+  SequenceForm["  (CleanSlate) Contexts purged: ", {"Global`"}],
+  Editable->False]], "Print",
+ CellLabel->
+  "During evaluation of \
+In[58]:=",ExpressionUUID->"37b798ec-6fed-4446-841d-a6827a2eb3b4"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"  (CleanSlate) Approximate kernel memory recovered: \"\>", 
+   "\[InvisibleSpace]", "\<\"234 Kb\"\>"}],
+  SequenceForm[
+  "  (CleanSlate) Approximate kernel memory recovered: ", "234 Kb"],
+  Editable->False]], "Print",
+ CellLabel->
+  "During evaluation of \
+In[58]:=",ExpressionUUID->"daee4f33-e8a3-44d1-bc5b-72f5dc0f289d"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Utilities`CleanSlate`\"\>", 
+   ",", "\<\"Parallel`Debug`Perfmon`\"\>", ",", "\<\"Parallel`Debug`\"\>", 
+   ",", "\<\"VariationalMethods`\"\>", ",", "\<\"System`\"\>", 
+   ",", "\<\"Global`\"\>"}], "}"}]], "Output",
+ CellLabel->"Out[0]=",ExpressionUUID->"991b6b2b-ccdd-4b77-9cdd-ec792bcd204f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Page", " ", "119"}], " ", "*)"}], " ", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Animate", "[", " ", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"ParametricPlot", "[", " ", 
+      RowBox[{
+       RowBox[{"{", "  ", 
+        RowBox[{
+         RowBox[{"A", " ", 
+          RowBox[{"Cos", "[", "t", "]"}]}], ",", " ", 
+         RowBox[{"A", "  ", 
+          RowBox[{"Sin", "[", "t", "]"}]}]}], " ", "}"}], " ", ",", " ", 
+       RowBox[{"{", " ", 
+        RowBox[{"t", ",", "0", ",", 
+         RowBox[{"2", " ", "\[Pi]"}]}], " ", "}"}], " ", ",", " ", 
+       RowBox[{"PlotRange", "\[Rule]", " ", 
+        RowBox[{"{", " ", 
+         RowBox[{
+          RowBox[{"-", "5"}], ",", "5"}], "}"}]}]}], " ", "]"}], " ", ",", 
+     " ", 
+     RowBox[{"{", " ", 
+      RowBox[{"A", ",", " ", "0", ",", " ", "5"}], " ", "}"}]}], " ", "]"}], 
+   " ", "\[IndentingNewLine]"}]}]], "Input",
+ CellLabel->"In[2]:=",ExpressionUUID->"1e9e9517-19cb-418d-8582-1d43b930afae"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`A$$ = 4.4247355461120605`, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`A$$], 0, 5}}, Typeset`size$$ = {360., {160., 164.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`A$$ = 0}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      ParametricPlot[{$CellContext`A$$ Cos[$CellContext`t], $CellContext`A$$ 
+         Sin[$CellContext`t]}, {$CellContext`t, 0, 2 Pi}, 
+        PlotRange -> {-5, 5}], 
+      "Specifications" :> {{$CellContext`A$$, 0, 5, 
+         AppearanceElements -> {
+          "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+           "DirectionButton"}}}, 
+      "Options" :> {
+       ControlType -> Animator, AppearanceElements -> None, DefaultBaseStyle -> 
+        "Animate", DefaultLabelStyle -> "AnimateLabel", SynchronousUpdating -> 
+        True, ShrinkingDelay -> 10.}, "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {196., 202.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Animate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellLabel->"Out[2]=",ExpressionUUID->"a1a10cbd-51ae-4626-9510-3be1df56e287"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Page", " ", "119"}], " ", "*)"}], " ", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Animate", "[", " ", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"ParametricPlot3D", "[", " ", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"{", " ", 
+        RowBox[{
+         RowBox[{"A", " ", 
+          RowBox[{"Cos", "[", "t", "]"}]}], ",", " ", "0", ",", " ", 
+         RowBox[{"A", " ", 
+          RowBox[{"Sin", "[", "t", "]"}]}]}], " ", "}"}], 
+       "\[IndentingNewLine]", " ", ",", " ", 
+       RowBox[{"{", " ", 
+        RowBox[{"t", ",", "0", ",", 
+         RowBox[{"2", " ", "\[Pi]"}]}], " ", "}"}], ",", " ", 
+       RowBox[{"PlotRange", "\[Rule]", " ", 
+        RowBox[{"{", " ", 
+         RowBox[{
+          RowBox[{"-", "5"}], ",", " ", "5"}], " ", "}"}]}]}], "  ", "]"}], 
+     " ", ",", " ", 
+     RowBox[{"{", " ", 
+      RowBox[{"A", ",", " ", "0", ",", " ", "5"}], " ", "}"}]}], " ", "]"}], 
+   " ", "\[IndentingNewLine]"}]}]], "Input",
+ CellLabel->"In[3]:=",ExpressionUUID->"87261267-c7f2-4d98-b36e-b6fa7c6cabfd"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`A$$ = 2.7054691314697266`, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`A$$], 0, 5}}, Typeset`size$$ = {360., {183., 188.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`A$$ = 0}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      ParametricPlot3D[{$CellContext`A$$ Cos[$CellContext`t], 
+         0, $CellContext`A$$ Sin[$CellContext`t]}, {$CellContext`t, 0, 2 Pi}, 
+        PlotRange -> {-5, 5}], 
+      "Specifications" :> {{$CellContext`A$$, 0, 5, 
+         AppearanceElements -> {
+          "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+           "DirectionButton"}}}, 
+      "Options" :> {
+       ControlType -> Animator, AppearanceElements -> None, DefaultBaseStyle -> 
+        "Animate", DefaultLabelStyle -> "AnimateLabel", SynchronousUpdating -> 
+        True, ShrinkingDelay -> 10.}, "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {220., 226.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Animate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellLabel->"Out[3]=",ExpressionUUID->"a1dff143-a6df-43fd-a375-000990fdb143"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Animate", "[", " ", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ContourPlot3D", "[", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"A", " ", 
+         SuperscriptBox["x", "2"]}], "+", 
+        RowBox[{"A", "  ", 
+         SuperscriptBox["y", "2"]}], "+", 
+        RowBox[{"A", " ", 
+         SuperscriptBox["z", "2"]}]}], "\[Equal]", " ", "16"}], "  ", ",", 
+      " ", 
+      RowBox[{"{", " ", 
+       RowBox[{"x", ",", " ", 
+        RowBox[{"-", "5"}], ",", " ", "5"}], "}"}], " ", ",", " ", 
+      RowBox[{"{", " ", 
+       RowBox[{"y", ",", " ", 
+        RowBox[{"-", "5"}], ",", " ", "5"}], " ", "}"}], " ", ",", " ", 
+      RowBox[{"{", " ", 
+       RowBox[{"z", ",", " ", 
+        RowBox[{"-", "5"}], " ", ",", " ", "5"}], " ", "}"}]}], " ", "]"}], 
+    " ", ",", " ", 
+    RowBox[{"{", " ", 
+     RowBox[{"A", ",", " ", "5", ",", " ", "0"}], " ", "}"}]}], " ", "]"}], 
+  " ", "\[IndentingNewLine]"}]], "Input",
+ CellLabel->"In[4]:=",ExpressionUUID->"fa0c42f8-08b3-4914-bc98-2fb0c23ff3e9"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`A$$ = 3.5300354957580566`, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`A$$], 5, 0}}, Typeset`size$$ = {360., {186., 190.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`A$$ = 5}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      ContourPlot3D[$CellContext`A$$ $CellContext`x^2 + $CellContext`A$$ \
+$CellContext`y^2 + $CellContext`A$$ $CellContext`z^2 == 
+        16, {$CellContext`x, -5, 5}, {$CellContext`y, -5, 
+         5}, {$CellContext`z, -5, 5}], 
+      "Specifications" :> {{$CellContext`A$$, 5, 0, 
+         AppearanceElements -> {
+          "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+           "DirectionButton"}}}, 
+      "Options" :> {
+       ControlType -> Animator, AppearanceElements -> None, DefaultBaseStyle -> 
+        "Animate", DefaultLabelStyle -> "AnimateLabel", SynchronousUpdating -> 
+        True, ShrinkingDelay -> 10.}, "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {222., 228.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Animate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellLabel->"Out[4]=",ExpressionUUID->"b7e07687-12a1-438b-b914-0344b56bc2e1"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+   "Use", " ", "Visit", " ", "for", " ", "Sedov", " ", "Blast", " ", "wave", 
+    " ", "visualization"}], ",", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"see", " ", 
+      RowBox[{
+      "here", ":", "\[IndentingNewLine]", "\[IndentingNewLine]", "http", 
+       ":"}]}], "//", 
+     RowBox[{
+      RowBox[{"visitusers", ".", "org"}], "/", 
+      RowBox[{"index", ".", 
+       RowBox[{"php", "?", "title"}]}]}]}], "=", "Tutorial_Data"}]}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", "*)"}]], "Input",ExpressionUUI\
+D->"b628fbd8-5c05-43b8-a92a-3f2696441b06"]
+},
+WindowSize->{808, 575},
+WindowMargins->{{55, Automatic}, {Automatic, -57}},
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->FrontEnd`FileName[{"Report"}, "StandardReport.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"c69e7a31-6f64-48fc-baab-3cc1d961def4"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 2079, 56, 357, "Input",ExpressionUUID->"98802bb9-d8f5-4f0b-a73b-5b66fe91e605"],
+Cell[CellGroupData[{
+Cell[2684, 82, 353, 8, 24, "Print",ExpressionUUID->"37b798ec-6fed-4446-841d-a6827a2eb3b4"],
+Cell[3040, 92, 372, 9, 24, "Print",ExpressionUUID->"daee4f33-e8a3-44d1-bc5b-72f5dc0f289d"]
+}, Open  ]],
+Cell[3427, 104, 337, 6, 63, "Output",ExpressionUUID->"991b6b2b-ccdd-4b77-9cdd-ec792bcd204f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3801, 115, 1020, 26, 126, "Input",ExpressionUUID->"1e9e9517-19cb-418d-8582-1d43b930afae"],
+Cell[4824, 143, 1992, 40, 424, "Output",ExpressionUUID->"a1a10cbd-51ae-4626-9510-3be1df56e287"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6853, 188, 1095, 27, 147, "Input",ExpressionUUID->"87261267-c7f2-4d98-b36e-b6fa7c6cabfd"],
+Cell[7951, 217, 1997, 40, 472, "Output",ExpressionUUID->"a1dff143-a6df-43fd-a375-000990fdb143"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9985, 262, 1057, 28, 111, "Input",ExpressionUUID->"fa0c42f8-08b3-4914-bc98-2fb0c23ff3e9"],
+Cell[11045, 292, 2054, 41, 476, "Output",ExpressionUUID->"b7e07687-12a1-438b-b914-0344b56bc2e1"]
+}, Open  ]],
+Cell[13114, 336, 668, 17, 168, "Input",ExpressionUUID->"b628fbd8-5c05-43b8-a92a-3f2696441b06"]
+}
+]
+*)
+
